@@ -11,6 +11,12 @@ import { Stars } from "lucide-react";
 import React from "react";
 
 function Home() {
+  const scrollToContact = () => {
+    const section = document.getElementById("contact");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div>
       <HeroSection />
@@ -30,10 +36,11 @@ function Home() {
             Shumaker
           </p>
           <Button
-            variant={"outline"}
-            className="border-2 text-lg border-slate-300 text-slate-200 py-4 px-6 flex items-center gap-2"
+            variant="outline"
+            onClick={scrollToContact}
+            className="border-2 text-base md:text-lg border-slate-300 text-white py-3 px-5 md:py-4 md:px-6 flex items-center gap-2 hover:bg-slate-800 hover:border-slate-400 transition"
           >
-            Start Healing <Stars className=" size-4 text-slate-200" />
+            Start Healing <Stars className="size-4 text-white" />
           </Button>
         </div>
       </div>

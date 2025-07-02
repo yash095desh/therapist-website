@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MapPin, Phone } from "lucide-react";
+import { Toaster } from "sonner";
 
 const inter = FontInter({
   subsets: ["latin"]
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div className=" flex flex-col min-h-screen">
+          <Toaster/>
           <div className="bg-red-100 border-b border-black">
             <div className="container py-2 px-2 flex items-center mx-auto justify-between text-sm">
               <p className="flex gap-2 items-center text-xs sm:text-sm md:text-base">

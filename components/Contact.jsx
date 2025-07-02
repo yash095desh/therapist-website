@@ -18,10 +18,14 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Clock, Info, MapPin, Phone } from "lucide-react";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
-  phone: z.string().min(7, "Phone is required"),
+  phone: z
+  .string()
+  .min(7, "Phone is required")
+  .regex(/^\d+$/, "Phone must contain only numbers"),
   email: z.string().email("Invalid email"),
   message: z.string().min(5, "Please tell us what brings you here"),
   preferredTime: z.string().min(2, "Preferred time required"),
@@ -44,9 +48,11 @@ const ContactSection = () => {
     },
   });
 
-  const onSubmit = (values) => {
-    console.log("Form Data:", values);
-  };
+const onSubmit = (values) => {
+  console.log("Form Data:", values);
+  toast.success("Thank you! We'll contact you as soon as possible.");
+  form.reset();
+};
 
   return (
     <section id="contact" className="bg-white py-20 px-4 md:px-12">
@@ -104,7 +110,7 @@ const ContactSection = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Phone</FormLabel>
-                    <FormControl><Input {...field} /></FormControl>
+                    <FormControl><Input {...field} type={"number"} /></FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
