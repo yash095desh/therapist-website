@@ -1,103 +1,58 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import AboutSection from "@/components/About";
+import ContactSection from "@/components/Contact";
+import CountSection from "@/components/CountSection";
+import FAQSection from "@/components/FAQSection";
+import HeroSection from "@/components/HeroSection";
+import HowIHelpSection from "@/components/HowIHelp";
+import { Button } from "@/components/ui/button";
+import { Stars } from "lucide-react";
+import React from "react";
+
+function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <HeroSection />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <CountSection />
+
+      <HowIHelpSection />
+
+      <div className="bg-slate-700 py-20">
+        <div className=" flex items-center flex-col md:flex-row mx-auto container justify-center md:justify-between gap-10">
+          <h1 className="text-4xl font-bold text-slate-200 tracking-tight">
+            Schedule a Consultation
+          </h1>
+          <p className="font-semibold text-slate-300 text-lg text-center md:text-start ">
+            Ellie Shumaker is currently accepting new clients. Availabile for
+            online and in-person sessions. Call and book appointment with Ellie
+            Shumaker
+          </p>
+          <Button
+            variant={"outline"}
+            className="border-2 text-lg border-slate-300 text-slate-200 py-4 px-6 flex items-center gap-2"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Start Healing <Stars className=" size-4 text-slate-200" />
+          </Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      <AboutSection />
+      <FAQSection />
+      <ContactSection />
+      <section className="w-full h-[400px]">
+        <iframe
+          title="Dr. Serena Blake Office Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.720218663671!2d-118.2602136847829!3d34.07815958059815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c71ed09c22e5%3A0x8a2d3308c6d2c38b!2s1287%20Maplewood%20Dr%2C%20Los%20Angeles%2C%20CA%2090026!5e0!3m2!1sen!2sus!4v1691326652075!5m2!1sen!2sus"
+          className="w-full h-full border-0"
+          allowFullScreen={true}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </section>
     </div>
   );
 }
+
+export default Home;
