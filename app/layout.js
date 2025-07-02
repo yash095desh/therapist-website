@@ -23,11 +23,11 @@ export default function RootLayout({ children }) {
         <div className=" flex flex-col min-h-screen">
           <div className="bg-red-100 border-b border-black">
             <div className="container py-2 px-2 flex items-center mx-auto justify-between text-sm">
-              <p className="flex gap-2 items-center">
+              <p className="flex gap-2 items-center text-xs sm:text-sm md:text-base">
                 <Phone className="size-4" />
                 (323) 555-0192
               </p>
-              <p className="flex gap-2 items-center">
+              <p className="flex gap-2 items-center text-xs sm:text-sm md:text-base ">
                 <MapPin className="size-4" />
                 1287 Maplewood Drive, Los Angeles, CA 90026
               </p>

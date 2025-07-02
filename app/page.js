@@ -21,7 +21,7 @@ function Home() {
 
       <div className="bg-slate-700 py-20">
         <div className=" flex items-center flex-col md:flex-row mx-auto container justify-center md:justify-between gap-10">
-          <h1 className="text-4xl font-bold text-slate-200 tracking-tight">
+          <h1 className="text-4xl font-bold text-slate-200 tracking-tight text-center">
             Schedule a Consultation
           </h1>
           <p className="font-semibold text-slate-300 text-lg text-center md:text-start ">

@@ -35,7 +35,7 @@ const CountSection = () => {
             <AnimatedCounter target={8} duration={2} /> +
           </h1>
           <p className="font-semibold text-xl">Years of Experience</p>
-          <p>Providing compassionate and effective Individual and Couples Therapy</p>
+          <p className=" text-center md:text-start">Providing compassionate and effective Individual and Couples Therapy</p>
         </div>
 
         <div className="space-y-2 text-white flex flex-col items-center md:items-start">
@@ -43,7 +43,7 @@ const CountSection = () => {
             <AnimatedCounter target={500} duration={3} /> +
           </h1>
           <p className="font-semibold text-xl">Individual Client Sessions</p>
-          <p>Helping individuals and couples heal, grow, and find purpose</p>
+          <p className=" text-center md:text-start">Helping individuals and couples heal, grow, and find purpose</p>
         </div>
       </div>
     </div>
